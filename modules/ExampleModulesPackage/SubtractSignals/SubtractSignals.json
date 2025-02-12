@@ -1,0 +1,41 @@
+{   
+    "item_name": "SubtractSignals",
+    "item_type": "module",
+    "item_api_version": "1.0.0",
+    "dependencies": [
+    ],
+    "module_params":{
+        "cls":"SubtractSignals",
+        "name":"SubtractSignals",
+        "metadata":{},
+        "file_location":null,
+        "module":"ExampleModulesPackage.SubtractSignals",
+        "module_label": "Subtract Signals",
+        "module_category":"Examples",
+        "module_author":"",
+        "module_url":"",
+        "module_description":"",
+        "module_options":{},
+        "inputs": {
+            "main_signal": {
+                "name": "main_signal",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },"signal_to_subtract": {
+                "name": "signal_to_subtract",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        },
+        "outputs": {
+            "signal": {
+                "name": "signal",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            }
+        }
+    }
+}

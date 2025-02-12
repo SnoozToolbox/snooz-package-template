@@ -1,0 +1,219 @@
+{
+    "item_name": "",
+    "item_type": "process",
+    "process_params": {
+        "process_label": "",
+        "nodes": [
+            {
+                "cls": "PrintSignal",
+                "name": "PrintSignal",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Print Signal",
+                "module_category": "Examples",
+                "module_options": {},
+                "inputs": {
+                    "signal": {
+                        "name": "signal",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "56d2a078-a2cf-4ea9-9fb0-5ef19aa67ba0": "signal"
+                        }
+                    },
+                    "filename": {
+                        "name": "filename",
+                        "value": "D:/CEAMS/snooz_workspace/Automatic-Sleep-Scoring-Package/Examples/test.png",
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {},
+                "module": "ExampleModulesPackage.PrintSignal",
+                "identifier": "d5f10570-80f5-431b-ab17-0f0ef01a3472",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "ExampleModulesPackage"
+                },
+                "pos_x": 185.0,
+                "pos_y": -123.0
+            },
+            {
+                "cls": "AddSignals",
+                "name": "AddSignals",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Add Signals",
+                "module_category": "Examples",
+                "module_options": {},
+                "inputs": {
+                    "signal_1": {
+                        "name": "signal_1",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "ddeb7e17-dace-4c6f-af6b-f2b9cb167c8c": "signal"
+                        }
+                    },
+                    "signal_2": {
+                        "name": "signal_2",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "35e5d789-6e74-4b53-a168-8d9f69723c89": "signal"
+                        }
+                    }
+                },
+                "outputs": {
+                    "signal": {
+                        "name": "signal",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "d5f10570-80f5-431b-ab17-0f0ef01a3472": [
+                                "signal"
+                            ]
+                        }
+                    }
+                },
+                "module": "ExampleModulesPackage.AddSignals",
+                "identifier": "56d2a078-a2cf-4ea9-9fb0-5ef19aa67ba0",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "ExampleModulesPackage"
+                },
+                "pos_x": -58.0,
+                "pos_y": -126.0
+            },
+            {
+                "cls": "SignalGenerator",
+                "name": "SignalGenerator",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Signal Generator",
+                "module_category": "Examples",
+                "module_options": {},
+                "inputs": {
+                    "duration": {
+                        "name": "duration",
+                        "value": "1",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "sample_rate": {
+                        "name": "sample_rate",
+                        "value": "128",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "frequency": {
+                        "name": "frequency",
+                        "value": "10",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "amplitude": {
+                        "name": "amplitude",
+                        "value": "4",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "phase": {
+                        "name": "phase",
+                        "value": "0",
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "signal": {
+                        "name": "signal",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "56d2a078-a2cf-4ea9-9fb0-5ef19aa67ba0": [
+                                "signal_2"
+                            ]
+                        }
+                    }
+                },
+                "module": "ExampleModulesPackage.SignalGenerator",
+                "identifier": "35e5d789-6e74-4b53-a168-8d9f69723c89",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "ExampleModulesPackage"
+                },
+                "pos_x": -308.0,
+                "pos_y": 25.0
+            },
+            {
+                "cls": "SignalGenerator",
+                "name": "SignalGenerator",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Signal Generator",
+                "module_category": "Examples",
+                "module_options": {},
+                "inputs": {
+                    "duration": {
+                        "name": "duration",
+                        "value": "1",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "sample_rate": {
+                        "name": "sample_rate",
+                        "value": "128",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "frequency": {
+                        "name": "frequency",
+                        "value": "5",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "amplitude": {
+                        "name": "amplitude",
+                        "value": "2",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "phase": {
+                        "name": "phase",
+                        "value": "0",
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "signal": {
+                        "name": "signal",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "56d2a078-a2cf-4ea9-9fb0-5ef19aa67ba0": [
+                                "signal_1"
+                            ]
+                        }
+                    }
+                },
+                "module": "ExampleModulesPackage.SignalGenerator",
+                "identifier": "ddeb7e17-dace-4c6f-af6b-f2b9cb167c8c",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "ExampleModulesPackage"
+                },
+                "pos_x": -313.0,
+                "pos_y": -268.0
+            }
+        ]
+    },
+    "compatibility_version": "1.0.0",
+    "dependencies": [
+        {
+            "package_name": "ExampleModulesPackage",
+            "package_version": "0.0.0"
+        }
+    ]
+}

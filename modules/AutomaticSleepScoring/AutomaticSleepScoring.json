@@ -1,0 +1,38 @@
+{
+    "package_name": "AutomaticSleepScoring",
+    "package_version": "0.0.0",
+    "package_api_version": "1.0.0",
+    "package_author": "MohammadHasanAzad",
+    "package_url": "",
+    "package_description": "This is a package that contains different modules for automatic sleep scoring with AI algorithms.",
+    "items": [
+        {
+            "item_name": "Yasa",
+            "item_type": "module",
+            "item_version": "0.0.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Examples",
+                        "module_label": "Yasa algorithm"
+                    }
+                }
+            ]
+        },
+        {
+            "item_name": "ResultSummary",
+            "item_type": "module",
+            "item_version": "0.0.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "module_endpoint",
+                    "parameters": {
+                        "module_category": "Examples",
+                        "module_label": "Result Summary"
+                    }
+                }
+            ]
+        }
+    ]
+}
