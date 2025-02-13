@@ -35,7 +35,7 @@ class Yasa(SciNode):
     Returns
     -------
     dict
-        Dictionary containing accuracy and additional information.
+        Dictionary containing Accuracy and additional information.
     """
     def __init__(self, **kwargs):
         """ Initialize module Yasa """
@@ -70,7 +70,7 @@ class Yasa(SciNode):
         Returns
         -------
         dict
-            Dictionary containing accuracy and additional information.
+            Dictionary containing Accuracy and additional information.
 
         Raises
         ------
@@ -104,10 +104,10 @@ class Yasa(SciNode):
         y_pred = sls.predict()
         y_pred = yasa.Hypnogram(y_pred, freq="30s")
 
-        #proba = sls.predict_proba()        
+        proba = sls.predict_proba()        
         # Get the confidence
-        #confidence = proba.max(axis=1)
-
+        confidence = proba.max(axis=1)
+        Avg_Confidence = confidence.mean()
         # Mask unwanted stages
         labels_new, first_wake, last_wake = self.mask_list(list(labels.hypno), mask_value='UNS', flag=True)
         y_pred_new, _, _ = self.mask_list(list(y_pred.hypno), mask_value='UNS', first_wake=first_wake, last_wake=last_wake, flag=False)
@@ -115,28 +115,28 @@ class Yasa(SciNode):
         # Filter out "UNS" stages
         labels_new, y_pred_new = self.filter_uns(labels_new, y_pred_new)
 
-        # Calculate accuracy
-        accuracy = 100 * (pd.Series(labels_new) == pd.Series(y_pred_new)).mean()
+        # Calculate Accuracy
+        Accuracy = 100 * (pd.Series(labels_new) == pd.Series(y_pred_new)).mean()
         report_dict = classification_report(labels_new, y_pred_new, output_dict=True)
 
         # Calculate F1 scores for each stage
         F1_scores = {stage: report_dict[stage]['f1-score']*100 if stage in report_dict else None for stage in ['WAKE', 'N1', 'N2', 'N3', 'REM']}
 
-        print(f"The overall agreement is {accuracy:.2f}%")
+        print(f"The overall agreement is {Accuracy:.2f}%")
 
         # Convert lists back to Hypnogram objects
         labels_new = yasa.Hypnogram(labels_new, freq="30s")
         y_pred_new = yasa.Hypnogram(y_pred_new, freq="30s")
 
         # Cache the results
-        self.cache_signal(labels_new, y_pred_new, accuracy, sls, first_wake, last_wake)
+        self.cache_signal(labels_new, y_pred_new, Accuracy, sls, first_wake, last_wake)
 
         # Log the results
         self._log_manager.log(self.identifier, "Hypnogram computed.")
-        self._log_manager.log(self.identifier, f"The overall agreement is {accuracy:.2f}%")
+        self._log_manager.log(self.identifier, f"The overall agreement is {Accuracy:.2f}%")
 
         # Create a DataFrame for the classification report
-        df_Classification_report = pd.DataFrame({'Accuracy': [accuracy], **{f'F1-{stage}': [F1_scores[stage]] for stage in F1_scores}})
+        df_Classification_report = pd.DataFrame({'Accuracy': [Accuracy], 'Average Confidence':[Avg_Confidence], **{f'F1-{stage}': [F1_scores[stage]] for stage in F1_scores}})
 
         return {
             'Accuracy': df_Classification_report,
@@ -226,7 +226,7 @@ class Yasa(SciNode):
         else:
             return yasa.SleepStaging(raw, eeg_name=ch_names[0], eog_name=ch_names[1] if 'eog' in ch_types else None, emg_name=ch_names[1] if 'emg' in ch_types else None)
 
-    def cache_signal(self, labels_new, y_pred_new, accuracy, sls, first_wake, last_wake):
+    def cache_signal(self, labels_new, y_pred_new, Accuracy, sls, first_wake, last_wake):
         """
         Cache the hypnogram.
 
@@ -236,8 +236,8 @@ class Yasa(SciNode):
             The new labels hypnogram.
         y_pred_new : Hypnogram
             The predicted labels hypnogram.
-        accuracy : float
-            The accuracy of the prediction.
+        Accuracy : float
+            The Accuracy of the prediction.
         sls : SleepStaging
             The YASA SleepStaging object.
         first_wake : int
@@ -248,7 +248,7 @@ class Yasa(SciNode):
         cache = {
             'labels_new': labels_new,
             'y_pred_new': y_pred_new,
-            'accuracy': accuracy,
+            'Accuracy': Accuracy,
             'sls': sls,
             'first_wake': first_wake,
             'last_wake': last_wake
