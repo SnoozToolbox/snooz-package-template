@@ -98,10 +98,15 @@ class Yasa(SciNode):
         raw = self.prepare_raw_data(raw)
         # Apply sleep staging
         sls = self.apply_sleep_staging(raw)
-
+        # Check the features
+        #features = sls.get_features()
         # Predict sleep stages
         y_pred = sls.predict()
         y_pred = yasa.Hypnogram(y_pred, freq="30s")
+
+        #proba = sls.predict_proba()        
+        # Get the confidence
+        #confidence = proba.max(axis=1)
 
         # Mask unwanted stages
         labels_new, first_wake, last_wake = self.mask_list(list(labels.hypno), mask_value='UNS', flag=True)
@@ -169,7 +174,7 @@ class Yasa(SciNode):
 
         # Create MNE RawArray object
         sfreq = raw[0].sample_rate
-        data = np.array([r.samples for r in raw])
+        data = np.array([r.samples*1e-6 for r in raw])
         info = mne.create_info(ch_names=ch_names, sfreq=sfreq, ch_types=ch_type)
         return mne.io.RawArray(data, info)
 

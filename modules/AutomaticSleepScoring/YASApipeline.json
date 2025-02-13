@@ -86,7 +86,148 @@
                 "inputs": {
                     "files": {
                         "name": "files",
-                        "value": {},
+                        "value": {
+                            "D:/CEAMS/snooz_workspace/Datasets/MASS/SS1/01-01-0041 PSG.edf": {
+                                "event_groups": [
+                                    "stage",
+                                    "art_snooz",
+                                    "spindle",
+                                    "MODA"
+                                ],
+                                "montages": {
+                                    "edf": {
+                                        "is_selected": true,
+                                        "montage_index": 0.0,
+                                        "channels": {
+                                            "EOG Left Horiz": {
+                                                "is_selected": true,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EOG Right Horiz": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EMG Chin1": {
+                                                "is_selected": true,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EMG Chin2": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EMG Chin3": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG F3-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG F4-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG C3-CLE": {
+                                                "is_selected": true,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG C4-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG O1-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG O2-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "ECG ECGI": {
+                                                "is_selected": false,
+                                                "sample_rate": "512.0"
+                                            },
+                                            "EMG Ant Tibial L": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EMG Ant Tibial R": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "Resp Thermistor": {
+                                                "is_selected": false,
+                                                "sample_rate": "128.0"
+                                            },
+                                            "Resp Cannula": {
+                                                "is_selected": false,
+                                                "sample_rate": "128.0"
+                                            },
+                                            "Resp Belt Thor": {
+                                                "is_selected": false,
+                                                "sample_rate": "128.0"
+                                            },
+                                            "Resp Belt Abdo": {
+                                                "is_selected": false,
+                                                "sample_rate": "128.0"
+                                            },
+                                            "EEG F7-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG F8-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG T3-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG T4-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG T5-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG T6-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG P3-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG P4-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG Fz-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG Cz-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG Pz-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG A2-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "SaO2 SaO2": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
                         "sub_plugs": {},
                         "connections": {}
                     },
