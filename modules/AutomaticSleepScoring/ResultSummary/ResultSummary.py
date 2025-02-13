@@ -41,9 +41,6 @@ class ResultSummary(SciNode):
         # Output plugs
         OutputPlug('ExportResults', self)
 
-        # Init module variables
-        self.this_is_an_example_you_can_delete_it = 0
-
         # A master module allows the process to be reexcuted multiple times.
         # For example, this is useful when the process must be repeated over multiple
         # files. When the master module is done, i.e., when all the files were processed,

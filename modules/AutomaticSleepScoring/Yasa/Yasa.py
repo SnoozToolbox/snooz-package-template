@@ -107,7 +107,7 @@ class Yasa(SciNode):
         proba = sls.predict_proba()        
         # Get the confidence
         confidence = proba.max(axis=1)
-        Avg_Confidence = confidence.mean()
+        Avg_Confidence = 100 * confidence.mean()
         # Mask unwanted stages
         labels_new, first_wake, last_wake = self.mask_list(list(labels.hypno), mask_value='UNS', flag=True)
         y_pred_new, _, _ = self.mask_list(list(y_pred.hypno), mask_value='UNS', first_wake=first_wake, last_wake=last_wake, flag=False)
@@ -129,7 +129,8 @@ class Yasa(SciNode):
         y_pred_new = yasa.Hypnogram(y_pred_new, freq="30s")
 
         # Cache the results
-        self.cache_signal(labels_new, y_pred_new, Accuracy, sls, first_wake, last_wake)
+        file_name = additional[:-4] # Extract the file name from the path
+        self.cache_signal(labels_new, y_pred_new, Accuracy, sls, first_wake, last_wake, Avg_Confidence, file_name)
 
         # Log the results
         self._log_manager.log(self.identifier, "Hypnogram computed.")
@@ -226,7 +227,7 @@ class Yasa(SciNode):
         else:
             return yasa.SleepStaging(raw, eeg_name=ch_names[0], eog_name=ch_names[1] if 'eog' in ch_types else None, emg_name=ch_names[1] if 'emg' in ch_types else None)
 
-    def cache_signal(self, labels_new, y_pred_new, Accuracy, sls, first_wake, last_wake):
+    def cache_signal(self, labels_new, y_pred_new, Accuracy, sls, first_wake, last_wake, Avg_Confidence, file_name):
         """
         Cache the hypnogram.
 
@@ -251,7 +252,9 @@ class Yasa(SciNode):
             'Accuracy': Accuracy,
             'sls': sls,
             'first_wake': first_wake,
-            'last_wake': last_wake
+            'last_wake': last_wake,
+            'Avg_Confidence': Avg_Confidence,
+            'file_name': file_name
         }
         self._cache_manager.write_mem_cache(self.identifier, cache)
 

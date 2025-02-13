@@ -32,17 +32,19 @@ class YasaResultsView(Ui_YasaResultsView, QtWidgets.QWidget):
 
         # init UI
         self.setupUi(self)
-
+        self.setGeometry(100, 100, 1200, 800)  # Set the window size to 1200x800 pixels
         # Init figure
         self.figure = Figure()
         self.canvas = FigureCanvas(self.figure)
         toolbar = NavigationToolbar(self.canvas, self)
-        self.result = QtWidgets.QLabel()
+        self.ACC = QtWidgets.QLabel()
+        self.Confidence = QtWidgets.QLabel()
         
         # set the layout
         self.result_layout.addWidget(toolbar)
         self.result_layout.addWidget(self.canvas)
-        self.result_layout.addWidget(self.result)
+        self.result_layout.addWidget(self.ACC)
+        self.result_layout.addWidget(self.Confidence)
 
     def load_results(self):
 
@@ -52,21 +54,25 @@ class YasaResultsView(Ui_YasaResultsView, QtWidgets.QWidget):
         
         if cache is not None:
             # call accuracy
-            accuracy = cache['accuracy']
+            Accuracy = cache['Accuracy']
+            # call avg_confidence
+            AvgConfidence = cache['Avg_Confidence']
             # Create a new label widget to display the accuracy
-            self.result.setText(f"Accuracy: {accuracy:.2f}%")
+            self.ACC.setText(f"Accuracy: {Accuracy:.2f}%")
+            self.Confidence.setText(f"Avg Confidence: {AvgConfidence:.2f}%")
             ### Plot the hypnogram
             # Define the layout for the plots
             gs = gridspec.GridSpec(2, 2, height_ratios=[1, 1])  # Three equal-height plots
             
             #confidence = cache['y_pred_new'].proba.max(axis=1)
             #print(confidence)
-            
+            # Adjust the layout to make each subplot bigger
+            gs.update(wspace=0.4, hspace=0.6)
             # First subplot - Hypnogram
             ax1 = self.figure.add_subplot(gs[0])
             ax1 = cache['labels_new'].plot_hypnogram(fill_color="gainsboro", ax=ax1)
             ax1.set_title('Expert Annotated Hypnogram')
-            ax1.set_xlabel('Time (h)')
+            #ax1.set_xlabel('Time (h)')
             ax1.set_ylabel('Sleep stage')
             ax1.grid()
 
@@ -96,6 +102,12 @@ class YasaResultsView(Ui_YasaResultsView, QtWidgets.QWidget):
             ax3.set_xticklabels(class_labels)
             ax3.set_yticks(tick_marks)
             ax3.set_yticklabels(class_labels)
+            # Save the figure to a PDF file
+            file_name = cache['file_name']
+            if isinstance(file_name, str) and (len(file_name)>0):
+                if not '.' in file_name:
+                    file_name = file_name + '.pdf'
+            self.figure.savefig(file_name, format='pdf')
 
             '''# Fourth subplot - Calibration Curve
             ax4 = self.figure.add_subplot(gs[3])
