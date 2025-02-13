@@ -141,7 +141,7 @@ class Yasa(SciNode):
 
         return {
             'Accuracy': df_Classification_report,
-            'additional': None
+            'additional': [labels_new, y_pred_new, file_name]
         }
 
     def prepare_raw_data(self, raw):

@@ -5,48 +5,72 @@
         "process_label": "",
         "nodes": [
             {
-                "cls": "ResultSummary",
-                "name": "ResultSummary",
+                "cls": "Yasa",
+                "name": "Yasa",
                 "metadata": {},
                 "file_location": null,
-                "module": "AutomaticSleepScoring.ResultSummary",
-                "module_label": "Result Summary",
+                "module": "AutomaticSleepScoring.Yasa",
+                "module_label": "Yasa algorithm",
                 "module_category": "Examples",
                 "module_author": "",
                 "module_url": "",
                 "module_description": "",
                 "module_options": {},
                 "inputs": {
-                    "ResultsDataframe": {
-                        "name": "ResultsDataframe",
+                    "raw": {
+                        "name": "raw",
                         "value": "",
                         "sub_plugs": {},
                         "connections": {
-                            "aca851de-6b5a-40b4-b937-6616c1503c77": "Accuracy"
+                            "031201d5-ff93-4be6-90d3-256d2ba689d1": "signals"
                         }
                     },
-                    "Additional": {
-                        "name": "Additional",
+                    "hpy": {
+                        "name": "hpy",
                         "value": "",
                         "sub_plugs": {},
-                        "connections": {}
+                        "connections": {
+                            "031201d5-ff93-4be6-90d3-256d2ba689d1": "sleep_stages"
+                        }
+                    },
+                    "additional": {
+                        "name": "additional",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "031201d5-ff93-4be6-90d3-256d2ba689d1": "filename"
+                        }
                     }
                 },
                 "outputs": {
-                    "ExportResults": {
-                        "name": "ExportResults",
+                    "Accuracy": {
+                        "name": "Accuracy",
                         "value": "",
                         "sub_plugs": {},
-                        "connections": {}
+                        "connections": {
+                            "600cf598-d9f7-44b6-a567-46f3df915854": [
+                                "ResultsDataframe"
+                            ]
+                        }
+                    },
+                    "additional": {
+                        "name": "additional",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "600cf598-d9f7-44b6-a567-46f3df915854": [
+                                "Additional"
+                            ]
+                        }
                     }
                 },
-                "identifier": "600cf598-d9f7-44b6-a567-46f3df915854",
+                "identifier": "aca851de-6b5a-40b4-b937-6616c1503c77",
                 "activation_state": "activated",
                 "package": {
                     "package_name": "AutomaticSleepScoring"
                 },
-                "pos_x": 63.0,
-                "pos_y": -105.0
+                "pos_x": -152.0,
+                "pos_y": -110.0
             },
             {
                 "cls": "PSGReader",
@@ -80,6 +104,146 @@
                                     "edf": {
                                         "is_selected": true,
                                         "montage_index": 0.0,
+                                        "channels": {
+                                            "EOG Left Horiz": {
+                                                "is_selected": true,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EOG Right Horiz": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EMG Chin1": {
+                                                "is_selected": true,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EMG Chin2": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EMG Chin3": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG F3-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG F4-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG C3-CLE": {
+                                                "is_selected": true,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG C4-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG O1-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG O2-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "ECG ECGI": {
+                                                "is_selected": false,
+                                                "sample_rate": "512.0"
+                                            },
+                                            "EMG Ant Tibial L": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EMG Ant Tibial R": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "Resp Thermistor": {
+                                                "is_selected": false,
+                                                "sample_rate": "128.0"
+                                            },
+                                            "Resp Cannula": {
+                                                "is_selected": false,
+                                                "sample_rate": "128.0"
+                                            },
+                                            "Resp Belt Thor": {
+                                                "is_selected": false,
+                                                "sample_rate": "128.0"
+                                            },
+                                            "Resp Belt Abdo": {
+                                                "is_selected": false,
+                                                "sample_rate": "128.0"
+                                            },
+                                            "EEG F7-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG F8-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG T3-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG T4-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG T5-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG T6-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG P3-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG P4-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG Fz-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG Cz-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG Pz-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "EEG A2-CLE": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            },
+                                            "SaO2 SaO2": {
+                                                "is_selected": false,
+                                                "sample_rate": "256.0"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "D:/CEAMS/snooz_workspace/Datasets/MASS/SS1/01-01-0040 PSG.edf": {
+                                "event_groups": [
+                                    "stage",
+                                    "art_snooz",
+                                    "spindle",
+                                    "MODA"
+                                ],
+                                "montages": {
+                                    "edf": {
+                                        "is_selected": true,
+                                        "montage_index": 0,
                                         "channels": {
                                             "EOG Left Horiz": {
                                                 "is_selected": true,
@@ -274,68 +438,50 @@
                 "pos_y": -38.0
             },
             {
-                "cls": "Yasa",
-                "name": "Yasa",
+                "cls": "ResultSummary",
+                "name": "ResultSummary",
                 "metadata": {},
                 "file_location": null,
-                "module": "AutomaticSleepScoring.Yasa",
-                "module_label": "Yasa algorithm",
+                "module": "AutomaticSleepScoring.ResultSummary",
+                "module_label": "Result Summary",
                 "module_category": "Examples",
                 "module_author": "",
                 "module_url": "",
                 "module_description": "",
                 "module_options": {},
                 "inputs": {
-                    "raw": {
-                        "name": "raw",
+                    "ResultsDataframe": {
+                        "name": "ResultsDataframe",
                         "value": "",
                         "sub_plugs": {},
                         "connections": {
-                            "031201d5-ff93-4be6-90d3-256d2ba689d1": "signals"
+                            "aca851de-6b5a-40b4-b937-6616c1503c77": "Accuracy"
                         }
                     },
-                    "hpy": {
-                        "name": "hpy",
+                    "Additional": {
+                        "name": "Additional",
                         "value": "",
                         "sub_plugs": {},
                         "connections": {
-                            "031201d5-ff93-4be6-90d3-256d2ba689d1": "sleep_stages"
-                        }
-                    },
-                    "additional": {
-                        "name": "additional",
-                        "value": "",
-                        "sub_plugs": {},
-                        "connections": {
-                            "031201d5-ff93-4be6-90d3-256d2ba689d1": "filename"
+                            "aca851de-6b5a-40b4-b937-6616c1503c77": "additional"
                         }
                     }
                 },
                 "outputs": {
-                    "Accuracy": {
-                        "name": "Accuracy",
-                        "value": "",
-                        "sub_plugs": {},
-                        "connections": {
-                            "600cf598-d9f7-44b6-a567-46f3df915854": [
-                                "ResultsDataframe"
-                            ]
-                        }
-                    },
-                    "additional": {
-                        "name": "additional",
+                    "ExportResults": {
+                        "name": "ExportResults",
                         "value": "",
                         "sub_plugs": {},
                         "connections": {}
                     }
                 },
-                "identifier": "aca851de-6b5a-40b4-b937-6616c1503c77",
+                "identifier": "600cf598-d9f7-44b6-a567-46f3df915854",
                 "activation_state": "activated",
                 "package": {
                     "package_name": "AutomaticSleepScoring"
                 },
-                "pos_x": -152.0,
-                "pos_y": -110.0
+                "pos_x": 63.0,
+                "pos_y": -105.0
             }
         ]
     },

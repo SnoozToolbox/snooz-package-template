@@ -72,7 +72,7 @@ class YasaResultsView(Ui_YasaResultsView, QtWidgets.QWidget):
             ax1 = self.figure.add_subplot(gs[0])
             ax1 = cache['labels_new'].plot_hypnogram(fill_color="gainsboro", ax=ax1)
             ax1.set_title('Expert Annotated Hypnogram')
-            #ax1.set_xlabel('Time (h)')
+            ax1.set_xlabel('Time (h)')
             ax1.set_ylabel('Sleep stage')
             ax1.grid()
 
@@ -103,11 +103,11 @@ class YasaResultsView(Ui_YasaResultsView, QtWidgets.QWidget):
             ax3.set_yticks(tick_marks)
             ax3.set_yticklabels(class_labels)
             # Save the figure to a PDF file
-            file_name = cache['file_name']
+            '''file_name = cache['file_name']
             if isinstance(file_name, str) and (len(file_name)>0):
                 if not '.' in file_name:
                     file_name = file_name + '.pdf'
-            self.figure.savefig(file_name, format='pdf')
+            self.figure.savefig(file_name, format='pdf')'''
 
             '''# Fourth subplot - Calibration Curve
             ax4 = self.figure.add_subplot(gs[3])
