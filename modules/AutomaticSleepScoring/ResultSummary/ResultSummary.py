@@ -105,7 +105,7 @@ class ResultSummary(SciNode):
 
         # Plot the hypnogram and confusion matrix and save to a PDF file
         self.figure.clear() # reset the hold on
-
+        self.figure.set_size_inches(15,4)
         ### Plot the hypnogram
         # Define the layout for the plots
         gs = gridspec.GridSpec(2, 2, height_ratios=[1, 1])  # Three equal-height plots
@@ -150,15 +150,23 @@ class ResultSummary(SciNode):
         ax3.set_xticklabels(class_labels)
         ax3.set_yticks(tick_marks)
         ax3.set_yticklabels(class_labels)
-        # Save the figure to a PDF file
+        # Fourth subplot - Accuracy and Average Confidence
+        ax4 = self.figure.add_subplot(gs[3])
+        ax4.axis('off')
+        # Add accuracy and average confidence text next to the subplots
+        ax4.text(0.5, 0.5, f"Accuracy: {ResultsDataframe['Accuracy'].iloc[0]:.2f}%", transform=ax4.transAxes, fontsize=12, verticalalignment='center', horizontalalignment='center')
+        ax4.text(0.5, 0.3, f"Avg Confidence: {ResultsDataframe['Average Confidence'].iloc[0]:.2f}%", transform=ax4.transAxes, fontsize=12, verticalalignment='center', horizontalalignment='center')
+        
+                            # Adjust layout to add more space between subplots
+        self.figure.tight_layout(pad=10.0)
+
+                # Save the figure to a PDF file
         file_name = Additional[2]
         if isinstance(file_name, str) and (len(file_name)>0):
             if not '.' in file_name:
                 file_name = file_name + '.pdf'
         self.figure.savefig(file_name, format='pdf')
 
-                    # Adjust layout to add more space between subplots
-        self.figure.tight_layout(pad=10.0)
         # refresh canvas
         self.canvas.draw()
         # Return the path to the updated Excel file

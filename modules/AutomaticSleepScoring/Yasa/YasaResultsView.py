@@ -39,7 +39,7 @@ class YasaResultsView(Ui_YasaResultsView, QtWidgets.QWidget):
         toolbar = NavigationToolbar(self.canvas, self)
         self.ACC = QtWidgets.QLabel()
         self.Confidence = QtWidgets.QLabel()
-        
+                
         # set the layout
         self.result_layout.addWidget(toolbar)
         self.result_layout.addWidget(self.canvas)
@@ -49,6 +49,7 @@ class YasaResultsView(Ui_YasaResultsView, QtWidgets.QWidget):
     def load_results(self):
 
         self.figure.clear() # reset the hold on 
+        self.figure.set_size_inches(15,4)
          # Read result cache
         cache = self._cache_manager.read_mem_cache(self._parent_node.identifier)
         

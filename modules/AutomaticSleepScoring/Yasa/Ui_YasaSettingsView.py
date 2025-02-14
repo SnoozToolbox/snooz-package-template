@@ -22,50 +22,65 @@ class Ui_YasaSettingsView(object):
         YasaSettingsView.resize(711, 333)
         self.verticalLayout = QVBoxLayout(YasaSettingsView)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.raw_horizontalLayout = QHBoxLayout()
-        self.raw_horizontalLayout.setObjectName(u"raw_horizontalLayout")
-        self.raw_label = QLabel(YasaSettingsView)
-        self.raw_label.setObjectName(u"raw_label")
+        self.filename_horizontalLayout = QHBoxLayout()
+        self.filename_horizontalLayout.setObjectName(u"filename_horizontalLayout")
+        self.filename_label = QLabel(YasaSettingsView)
+        self.filename_label.setObjectName(u"filename_label")
 
-        self.raw_horizontalLayout.addWidget(self.raw_label)
+        self.filename_horizontalLayout.addWidget(self.filename_label)
 
-        self.raw_lineedit = QLineEdit(YasaSettingsView)
-        self.raw_lineedit.setObjectName(u"raw_lineedit")
+        self.filename_lineedit = QLineEdit(YasaSettingsView)
+        self.filename_lineedit.setObjectName(u"filename_lineedit")
 
-        self.raw_horizontalLayout.addWidget(self.raw_lineedit)
-
-
-        self.verticalLayout.addLayout(self.raw_horizontalLayout)
-
-        self.hpy_horizontalLayout = QHBoxLayout()
-        self.hpy_horizontalLayout.setObjectName(u"hpy_horizontalLayout")
-        self.hpy_label = QLabel(YasaSettingsView)
-        self.hpy_label.setObjectName(u"hpy_label")
-
-        self.hpy_horizontalLayout.addWidget(self.hpy_label)
-
-        self.hpy_lineedit = QLineEdit(YasaSettingsView)
-        self.hpy_lineedit.setObjectName(u"hpy_lineedit")
-
-        self.hpy_horizontalLayout.addWidget(self.hpy_lineedit)
+        self.filename_horizontalLayout.addWidget(self.filename_lineedit)
 
 
-        self.verticalLayout.addLayout(self.hpy_horizontalLayout)
+        self.verticalLayout.addLayout(self.filename_horizontalLayout)
 
-        self.additional_horizontalLayout = QHBoxLayout()
-        self.additional_horizontalLayout.setObjectName(u"additional_horizontalLayout")
-        self.additional_label = QLabel(YasaSettingsView)
-        self.additional_label.setObjectName(u"additional_label")
+        self.signals_horizontalLayout = QHBoxLayout()
+        self.signals_horizontalLayout.setObjectName(u"signals_horizontalLayout")
+        self.signals_label = QLabel(YasaSettingsView)
+        self.signals_label.setObjectName(u"signals_label")
 
-        self.additional_horizontalLayout.addWidget(self.additional_label)
+        self.signals_horizontalLayout.addWidget(self.signals_label)
 
-        self.additional_lineedit = QLineEdit(YasaSettingsView)
-        self.additional_lineedit.setObjectName(u"additional_lineedit")
+        self.signals_lineedit = QLineEdit(YasaSettingsView)
+        self.signals_lineedit.setObjectName(u"signals_lineedit")
 
-        self.additional_horizontalLayout.addWidget(self.additional_lineedit)
+        self.signals_horizontalLayout.addWidget(self.signals_lineedit)
 
 
-        self.verticalLayout.addLayout(self.additional_horizontalLayout)
+        self.verticalLayout.addLayout(self.signals_horizontalLayout)
+
+        self.sleep_stages_horizontalLayout = QHBoxLayout()
+        self.sleep_stages_horizontalLayout.setObjectName(u"sleep_stages_horizontalLayout")
+        self.sleep_stages_label = QLabel(YasaSettingsView)
+        self.sleep_stages_label.setObjectName(u"sleep_stages_label")
+
+        self.sleep_stages_horizontalLayout.addWidget(self.sleep_stages_label)
+
+        self.sleep_stages_lineedit = QLineEdit(YasaSettingsView)
+        self.sleep_stages_lineedit.setObjectName(u"sleep_stages_lineedit")
+
+        self.sleep_stages_horizontalLayout.addWidget(self.sleep_stages_lineedit)
+
+
+        self.verticalLayout.addLayout(self.sleep_stages_horizontalLayout)
+
+        self.events_horizontalLayout = QHBoxLayout()
+        self.events_horizontalLayout.setObjectName(u"events_horizontalLayout")
+        self.events_label = QLabel(YasaSettingsView)
+        self.events_label.setObjectName(u"events_label")
+
+        self.events_horizontalLayout.addWidget(self.events_label)
+
+        self.events_lineedit = QLineEdit(YasaSettingsView)
+        self.events_lineedit.setObjectName(u"events_lineedit")
+
+        self.events_horizontalLayout.addWidget(self.events_lineedit)
+
+
+        self.verticalLayout.addLayout(self.events_horizontalLayout)
 
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
@@ -79,8 +94,9 @@ class Ui_YasaSettingsView(object):
 
     def retranslateUi(self, YasaSettingsView):
         YasaSettingsView.setWindowTitle(QCoreApplication.translate("YasaSettingsView", u"Form", None))
-        self.raw_label.setText(QCoreApplication.translate("YasaSettingsView", u"raw", None))
-        self.hpy_label.setText(QCoreApplication.translate("YasaSettingsView", u"hpy", None))
-        self.additional_label.setText(QCoreApplication.translate("YasaSettingsView", u"additional", None))
+        self.filename_label.setText(QCoreApplication.translate("YasaSettingsView", u"filename", None))
+        self.signals_label.setText(QCoreApplication.translate("YasaSettingsView", u"signals", None))
+        self.sleep_stages_label.setText(QCoreApplication.translate("YasaSettingsView", u"sleep_stages", None))
+        self.events_label.setText(QCoreApplication.translate("YasaSettingsView", u"events", None))
     # retranslateUi
 

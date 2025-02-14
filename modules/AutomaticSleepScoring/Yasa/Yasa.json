@@ -10,38 +10,48 @@
         "metadata":{},
         "file_location":null,
         "module":"AutomaticSleepScoring.Yasa",
-        "module_label": "Yasa algorithm",
+        "module_label": "Yasa",
         "module_category":"Examples",
         "module_author":"",
         "module_url":"",
         "module_description":"",
         "module_options":{},
         "inputs": {
-            "raw": {
-                "name": "raw",
+            "filename": {
+                "name": "filename",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"hpy": {
-                "name": "hpy",
+            },"signals": {
+                "name": "signals",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"additional": {
-                "name": "additional",
+            },"sleep_stages": {
+                "name": "sleep_stages",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },"events": {
+                "name": "events",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
             }
         },
         "outputs": {
-            "Accuracy": {
-                "name": "Accuracy",
+            "results": {
+                "name": "results",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}
-            },"additional": {
-                "name": "additional",
+            },"info": {
+                "name": "info",
+                "value": "",
+                "connections": {},
+                "sub_plugs": {}
+            },"new_events": {
+                "name": "new_events",
                 "value": "",
                 "connections": {},
                 "sub_plugs": {}

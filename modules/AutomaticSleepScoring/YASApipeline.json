@@ -5,72 +5,281 @@
         "process_label": "",
         "nodes": [
             {
-                "cls": "Yasa",
-                "name": "Yasa",
+                "cls": "SleepStageEvents",
+                "name": "SleepStageEvents",
                 "metadata": {},
-                "file_location": null,
-                "module": "AutomaticSleepScoring.Yasa",
-                "module_label": "Yasa algorithm",
-                "module_category": "Examples",
-                "module_author": "",
-                "module_url": "",
-                "module_description": "",
+                "file_location": "",
+                "module_label": "Sleep Stage Events",
+                "module_category": "Events Utilities",
                 "module_options": {},
                 "inputs": {
-                    "raw": {
-                        "name": "raw",
+                    "epoch_len": {
+                        "name": "epoch_len",
                         "value": "",
                         "sub_plugs": {},
-                        "connections": {
-                            "031201d5-ff93-4be6-90d3-256d2ba689d1": "signals"
-                        }
+                        "connections": {}
                     },
-                    "hpy": {
-                        "name": "hpy",
+                    "sleep_stages": {
+                        "name": "sleep_stages",
                         "value": "",
                         "sub_plugs": {},
                         "connections": {
                             "031201d5-ff93-4be6-90d3-256d2ba689d1": "sleep_stages"
                         }
                     },
-                    "additional": {
-                        "name": "additional",
+                    "stages": {
+                        "name": "stages",
+                        "value": "0,1,2,3,5",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "merge_events": {
+                        "name": "merge_events",
+                        "value": "0",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "new_event_name": {
+                        "name": "new_event_name",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "exclude_nremp": {
+                        "name": "exclude_nremp",
+                        "value": "0",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "exclude_remp": {
+                        "name": "exclude_remp",
+                        "value": "0",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "in_cycle": {
+                        "name": "in_cycle",
+                        "value": "0",
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "sleep_stage_events": {
+                        "name": "sleep_stage_events",
                         "value": "",
                         "sub_plugs": {},
                         "connections": {
-                            "031201d5-ff93-4be6-90d3-256d2ba689d1": "filename"
+                            "97f7bbab-0998-478d-86a6-f2916119fe68": [
+                                "sleep_stages",
+                                "events"
+                            ]
+                        }
+                    }
+                },
+                "module": "CEAMSModules.SleepStageEvents",
+                "identifier": "088a0708-6140-40b2-aaec-ef06bc21d7c4",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                },
+                "pos_x": -242.5,
+                "pos_y": 498.25
+            },
+            {
+                "cls": "SignalsFromEvents",
+                "name": "SignalsFromEvents",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Signals From Events",
+                "module_category": "Events Utilities",
+                "module_options": {},
+                "inputs": {
+                    "signals": {
+                        "name": "signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "031201d5-ff93-4be6-90d3-256d2ba689d1": "signals"
+                        }
+                    },
+                    "events": {
+                        "name": "events",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "6bce15ba-1723-42cb-b093-b42f78cbbe2e": "sleep_stage_events"
+                        }
+                    },
+                    "events_names": {
+                        "name": "events_names",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "create": {
+                        "name": "create",
+                        "value": true,
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "signals_from_events": {
+                        "name": "signals_from_events",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "97f7bbab-0998-478d-86a6-f2916119fe68": [
+                                "signals"
+                            ],
+                            "d58e68d0-a538-481b-87fe-9c7a3e9538a9": [
+                                "signals"
+                            ]
+                        }
+                    },
+                    "epochs_to_process": {
+                        "name": "epochs_to_process",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "module": "CEAMSModules.SignalsFromEvents",
+                "identifier": "3874c5b6-2e82-4a69-b4e0-0a8cc21bd582",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                },
+                "pos_x": 57.0,
+                "pos_y": -180.0
+            },
+            {
+                "cls": "SleepStageEvents",
+                "name": "SleepStageEvents",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "Sleep Stage Events",
+                "module_category": "Events Utilities",
+                "module_options": {},
+                "inputs": {
+                    "epoch_len": {
+                        "name": "epoch_len",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "sleep_stages": {
+                        "name": "sleep_stages",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "031201d5-ff93-4be6-90d3-256d2ba689d1": "sleep_stages"
+                        }
+                    },
+                    "stages": {
+                        "name": "stages",
+                        "value": "0,1,2,3,5",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "merge_events": {
+                        "name": "merge_events",
+                        "value": "1",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "new_event_name": {
+                        "name": "new_event_name",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "exclude_nremp": {
+                        "name": "exclude_nremp",
+                        "value": "0",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "exclude_remp": {
+                        "name": "exclude_remp",
+                        "value": "0",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "in_cycle": {
+                        "name": "in_cycle",
+                        "value": "0",
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {
+                    "sleep_stage_events": {
+                        "name": "sleep_stage_events",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "3874c5b6-2e82-4a69-b4e0-0a8cc21bd582": [
+                                "events"
+                            ]
+                        }
+                    }
+                },
+                "module": "CEAMSModules.SleepStageEvents",
+                "identifier": "6bce15ba-1723-42cb-b093-b42f78cbbe2e",
+                "activation_state": "activated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                },
+                "pos_x": -242.0,
+                "pos_y": 241.5
+            },
+            {
+                "cls": "ResultSummary",
+                "name": "ResultSummary",
+                "metadata": {},
+                "file_location": null,
+                "module": "AutomaticSleepScoring.ResultSummary",
+                "module_label": "Result Summary",
+                "module_category": "Examples",
+                "module_author": "",
+                "module_url": "",
+                "module_description": "",
+                "module_options": {},
+                "inputs": {
+                    "ResultsDataframe": {
+                        "name": "ResultsDataframe",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "97f7bbab-0998-478d-86a6-f2916119fe68": "results"
+                        }
+                    },
+                    "Additional": {
+                        "name": "Additional",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "97f7bbab-0998-478d-86a6-f2916119fe68": "info"
                         }
                     }
                 },
                 "outputs": {
-                    "Accuracy": {
-                        "name": "Accuracy",
+                    "ExportResults": {
+                        "name": "ExportResults",
                         "value": "",
                         "sub_plugs": {},
-                        "connections": {
-                            "600cf598-d9f7-44b6-a567-46f3df915854": [
-                                "ResultsDataframe"
-                            ]
-                        }
-                    },
-                    "additional": {
-                        "name": "additional",
-                        "value": "",
-                        "sub_plugs": {},
-                        "connections": {
-                            "600cf598-d9f7-44b6-a567-46f3df915854": [
-                                "Additional"
-                            ]
-                        }
+                        "connections": {}
                     }
                 },
-                "identifier": "aca851de-6b5a-40b4-b937-6616c1503c77",
+                "identifier": "600cf598-d9f7-44b6-a567-46f3df915854",
                 "activation_state": "activated",
                 "package": {
                     "package_name": "AutomaticSleepScoring"
                 },
-                "pos_x": -152.0,
-                "pos_y": -110.0
+                "pos_x": 905.0,
+                "pos_y": -73.75
             },
             {
                 "cls": "PSGReader",
@@ -232,146 +441,6 @@
                                         }
                                     }
                                 }
-                            },
-                            "D:/CEAMS/snooz_workspace/Datasets/MASS/SS1/01-01-0040 PSG.edf": {
-                                "event_groups": [
-                                    "stage",
-                                    "art_snooz",
-                                    "spindle",
-                                    "MODA"
-                                ],
-                                "montages": {
-                                    "edf": {
-                                        "is_selected": true,
-                                        "montage_index": 0,
-                                        "channels": {
-                                            "EOG Left Horiz": {
-                                                "is_selected": true,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EOG Right Horiz": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EMG Chin1": {
-                                                "is_selected": true,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EMG Chin2": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EMG Chin3": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG F3-CLE": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG F4-CLE": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG C3-CLE": {
-                                                "is_selected": true,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG C4-CLE": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG O1-CLE": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG O2-CLE": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "ECG ECGI": {
-                                                "is_selected": false,
-                                                "sample_rate": "512.0"
-                                            },
-                                            "EMG Ant Tibial L": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EMG Ant Tibial R": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "Resp Thermistor": {
-                                                "is_selected": false,
-                                                "sample_rate": "128.0"
-                                            },
-                                            "Resp Cannula": {
-                                                "is_selected": false,
-                                                "sample_rate": "128.0"
-                                            },
-                                            "Resp Belt Thor": {
-                                                "is_selected": false,
-                                                "sample_rate": "128.0"
-                                            },
-                                            "Resp Belt Abdo": {
-                                                "is_selected": false,
-                                                "sample_rate": "128.0"
-                                            },
-                                            "EEG F7-CLE": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG F8-CLE": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG T3-CLE": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG T4-CLE": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG T5-CLE": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG T6-CLE": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG P3-CLE": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG P4-CLE": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG Fz-CLE": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG Cz-CLE": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG Pz-CLE": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "EEG A2-CLE": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            },
-                                            "SaO2 SaO2": {
-                                                "is_selected": false,
-                                                "sample_rate": "256.0"
-                                            }
-                                        }
-                                    }
-                                }
                             }
                         },
                         "sub_plugs": {},
@@ -390,8 +459,11 @@
                         "value": "",
                         "sub_plugs": {},
                         "connections": {
-                            "aca851de-6b5a-40b4-b937-6616c1503c77": [
-                                "additional"
+                            "97f7bbab-0998-478d-86a6-f2916119fe68": [
+                                "filename"
+                            ],
+                            "d58e68d0-a538-481b-87fe-9c7a3e9538a9": [
+                                "input_filename"
                             ]
                         }
                     },
@@ -400,8 +472,8 @@
                         "value": "",
                         "sub_plugs": {},
                         "connections": {
-                            "aca851de-6b5a-40b4-b937-6616c1503c77": [
-                                "raw"
+                            "3874c5b6-2e82-4a69-b4e0-0a8cc21bd582": [
+                                "signals"
                             ]
                         }
                     },
@@ -416,8 +488,11 @@
                         "value": "",
                         "sub_plugs": {},
                         "connections": {
-                            "aca851de-6b5a-40b4-b937-6616c1503c77": [
-                                "hpy"
+                            "6bce15ba-1723-42cb-b093-b42f78cbbe2e": [
+                                "sleep_stages"
+                            ],
+                            "088a0708-6140-40b2-aaec-ef06bc21d7c4": [
+                                "sleep_stages"
                             ]
                         }
                     },
@@ -434,66 +509,174 @@
                 "package": {
                     "package_name": "CEAMSModules"
                 },
-                "pos_x": -379.0,
-                "pos_y": -38.0
+                "pos_x": -534.75,
+                "pos_y": 17.0
             },
             {
-                "cls": "ResultSummary",
-                "name": "ResultSummary",
+                "cls": "Yasa",
+                "name": "Yasa",
                 "metadata": {},
                 "file_location": null,
-                "module": "AutomaticSleepScoring.ResultSummary",
-                "module_label": "Result Summary",
+                "module": "AutomaticSleepScoring.Yasa",
+                "module_label": "Yasa",
                 "module_category": "Examples",
                 "module_author": "",
                 "module_url": "",
                 "module_description": "",
                 "module_options": {},
                 "inputs": {
-                    "ResultsDataframe": {
-                        "name": "ResultsDataframe",
+                    "filename": {
+                        "name": "filename",
                         "value": "",
                         "sub_plugs": {},
                         "connections": {
-                            "aca851de-6b5a-40b4-b937-6616c1503c77": "Accuracy"
+                            "031201d5-ff93-4be6-90d3-256d2ba689d1": "filename"
                         }
                     },
-                    "Additional": {
-                        "name": "Additional",
+                    "signals": {
+                        "name": "signals",
                         "value": "",
                         "sub_plugs": {},
                         "connections": {
-                            "aca851de-6b5a-40b4-b937-6616c1503c77": "additional"
+                            "3874c5b6-2e82-4a69-b4e0-0a8cc21bd582": "signals_from_events"
+                        }
+                    },
+                    "sleep_stages": {
+                        "name": "sleep_stages",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "088a0708-6140-40b2-aaec-ef06bc21d7c4": "sleep_stage_events"
+                        }
+                    },
+                    "events": {
+                        "name": "events",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "088a0708-6140-40b2-aaec-ef06bc21d7c4": "sleep_stage_events"
                         }
                     }
                 },
                 "outputs": {
-                    "ExportResults": {
-                        "name": "ExportResults",
+                    "results": {
+                        "name": "results",
                         "value": "",
                         "sub_plugs": {},
-                        "connections": {}
+                        "connections": {
+                            "600cf598-d9f7-44b6-a567-46f3df915854": [
+                                "ResultsDataframe"
+                            ]
+                        }
+                    },
+                    "info": {
+                        "name": "info",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "600cf598-d9f7-44b6-a567-46f3df915854": [
+                                "Additional"
+                            ]
+                        }
+                    },
+                    "new_events": {
+                        "name": "new_events",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "d58e68d0-a538-481b-87fe-9c7a3e9538a9": [
+                                "new_events"
+                            ]
+                        }
                     }
                 },
-                "identifier": "600cf598-d9f7-44b6-a567-46f3df915854",
+                "identifier": "97f7bbab-0998-478d-86a6-f2916119fe68",
                 "activation_state": "activated",
                 "package": {
                     "package_name": "AutomaticSleepScoring"
                 },
-                "pos_x": 63.0,
-                "pos_y": -105.0
+                "pos_x": 541.25,
+                "pos_y": 3.75
+            },
+            {
+                "cls": "PSGWriter",
+                "name": "PSGWriter",
+                "metadata": {},
+                "file_location": "",
+                "module_label": "PSGWriter",
+                "module_category": "Files I/O",
+                "module_options": {},
+                "inputs": {
+                    "input_filename": {
+                        "name": "input_filename",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "031201d5-ff93-4be6-90d3-256d2ba689d1": "filename"
+                        }
+                    },
+                    "output_filename": {
+                        "name": "output_filename",
+                        "value": "Output",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "signals": {
+                        "name": "signals",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "3874c5b6-2e82-4a69-b4e0-0a8cc21bd582": "signals_from_events"
+                        }
+                    },
+                    "new_events": {
+                        "name": "new_events",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {
+                            "97f7bbab-0998-478d-86a6-f2916119fe68": "new_events"
+                        }
+                    },
+                    "events_to_remove": {
+                        "name": "events_to_remove",
+                        "value": "",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "overwrite_events": {
+                        "name": "overwrite_events",
+                        "value": "False",
+                        "sub_plugs": {},
+                        "connections": {}
+                    },
+                    "overwrite_signals": {
+                        "name": "overwrite_signals",
+                        "value": "False",
+                        "sub_plugs": {},
+                        "connections": {}
+                    }
+                },
+                "outputs": {},
+                "module": "CEAMSModules.PSGWriter",
+                "identifier": "d58e68d0-a538-481b-87fe-9c7a3e9538a9",
+                "activation_state": "deactivated",
+                "package": {
+                    "package_name": "CEAMSModules"
+                },
+                "pos_x": 865.25,
+                "pos_y": 303.5
             }
         ]
     },
     "compatibility_version": "1.0.0",
     "dependencies": [
         {
-            "package_name": "AutomaticSleepScoring",
-            "package_version": "0.0.0"
-        },
-        {
             "package_name": "CEAMSModules",
             "package_version": "6.11.0"
+        },
+        {
+            "package_name": "AutomaticSleepScoring",
+            "package_version": "0.0.0"
         }
     ]
 }
