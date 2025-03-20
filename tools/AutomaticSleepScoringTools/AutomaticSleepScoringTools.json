@@ -1,0 +1,25 @@
+{
+    "package_name": "AutomaticSleepScoringTools",
+    "package_version": "1.0.0",
+    "package_author": "Mohammad Hasan Azad",
+    "package_url": "",
+    "package_description": "",
+    "package_api_version": "1.0.0",
+    "items": [
+ 
+        {
+            "item_name": "AutomaticSleepScoring",
+            "item_type": "tool",
+            "item_version": "1.0.0",
+            "item_hooks": [
+                {
+                    "endpoint_name": "menu_endpoint",
+                    "parameters": {
+                        "menu_category": "1-Preprocessing",
+                        "menu_label": "Score Sleep Stages YASA"
+                    }
+                }
+            ]
+        }
+    ]
+}
