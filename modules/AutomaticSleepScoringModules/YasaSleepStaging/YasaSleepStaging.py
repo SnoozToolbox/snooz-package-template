@@ -2,8 +2,8 @@
 @ CIUSSS DU NORD-DE-L'ILE-DE-MONTREAL – 2024
 See the file LICENCE for full license details.
 
-    Yasa
-    This class performs automatic sleep scoring using the Yasa package.
+    YasaSleepStaging
+    This class performs automatic sleep scoring using the YasaSleepStaging package.
 """
 from flowpipe import SciNode, InputPlug, OutputPlug
 from commons.NodeInputException import NodeInputException
@@ -19,9 +19,9 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 DEBUG = False
 
-class Yasa(SciNode):
+class YasaSleepStaging(SciNode):
     """
-    This class performs automatic sleep scoring using the Yasa package.
+    This class performs automatic sleep scoring using the YasaSleepStaging package.
 
     Parameters
     ----------
@@ -44,9 +44,9 @@ class Yasa(SciNode):
         
     """
     def __init__(self, **kwargs):
-        """ Initialize module Yasa """
+        """ Initialize module YasaSleepStaging """
         super().__init__(**kwargs)
-        if DEBUG: print('Yasa.__init__')
+        if DEBUG: print('YasaSleepStaging.__init__')
 
         # Input plugs
         InputPlug('filename', self)

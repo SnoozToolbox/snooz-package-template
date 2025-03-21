@@ -7,7 +7,7 @@
     "package_description": "This is a package that contains different modules for automatic sleep scoring with AI algorithms.",
     "items": [
         {
-            "item_name": "Yasa",
+            "item_name": "YasaSleepStaging",
             "item_type": "module",
             "item_version": "1.0.0",
             "item_hooks": [

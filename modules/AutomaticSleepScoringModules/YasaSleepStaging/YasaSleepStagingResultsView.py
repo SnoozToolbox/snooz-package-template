@@ -2,7 +2,7 @@
 @ CIUSSS DU NORD-DE-L'ILE-DE-MONTREAL – 2024
 See the file LICENCE for full license details.
 
-    Results viewer of the Yasa plugin
+    Results viewer of the YasaSleepStaging plugin
 """
 
 import matplotlib
@@ -15,17 +15,17 @@ import matplotlib.gridspec as gridspec
 import numpy as np
 from qtpy import QtWidgets
 
-from AutomaticSleepScoringModules.Yasa.Ui_YasaResultsView import Ui_YasaResultsView
+from AutomaticSleepScoringModules.YasaSleepStaging.Ui_YasaSleepStagingResultsView import Ui_YasaSleepStagingResultsView
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
 from sklearn.calibration import calibration_curve
 
-class YasaResultsView(Ui_YasaResultsView, QtWidgets.QWidget):
+class YasaSleepStagingResultsView(Ui_YasaSleepStagingResultsView, QtWidgets.QWidget):
     """
-        YasaResultsView.
+        YasaSleepStagingResultsView.
     """
     def __init__(self, parent_node, cache_manager, pub_sub_manager, *args, **kwargs):
-        super(YasaResultsView, self).__init__(*args, **kwargs)
+        super(YasaSleepStagingResultsView, self).__init__(*args, **kwargs)
         self._parent_node = parent_node
         self._pub_sub_manager = pub_sub_manager
         self._cache_manager = cache_manager

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>YasaSettingsView</class>
- <widget class="QWidget" name="YasaSettingsView">
+ <class>YasaSleepStagingSettingsView</class>
+ <widget class="QWidget" name="YasaSleepStagingSettingsView">
   <property name="styleSheet">
    <string notr="true">font: 12pt &quot;Roboto&quot;;</string>
   </property>

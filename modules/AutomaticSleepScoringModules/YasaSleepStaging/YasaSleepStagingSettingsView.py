@@ -7,12 +7,12 @@ See the file LICENCE for full license details.
 
 from qtpy import QtWidgets
 
-from AutomaticSleepScoringModules.Yasa.Ui_YasaSettingsView import Ui_YasaSettingsView
+from AutomaticSleepScoringModules.YasaSleepStaging.Ui_YasaSleepStagingSettingsView import Ui_YasaSleepStagingSettingsView
 from commons.BaseSettingsView import BaseSettingsView
 
-class YasaSettingsView(BaseSettingsView, Ui_YasaSettingsView, QtWidgets.QWidget):
+class YasaSleepStagingSettingsView(BaseSettingsView, Ui_YasaSleepStagingSettingsView, QtWidgets.QWidget):
     """
-        YasaView set the Yasa settings
+        YasaSleepStagingView set the YasaSleepStaging settings
     """
     def __init__(self, parent_node, pub_sub_manager, **kwargs):
         super().__init__(**kwargs)

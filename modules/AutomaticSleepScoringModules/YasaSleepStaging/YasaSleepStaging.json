@@ -1,15 +1,15 @@
 {   
-    "item_name": "Yasa",
+    "item_name": "YasaSleepStaging",
     "item_type": "module",
     "item_api_version": "1.0.0",
     "dependencies": [
     ],
     "module_params":{
-        "cls":"Yasa",
-        "name":"Yasa",
+        "cls":"YasaSleepStaging",
+        "name":"YasaSleepStaging",
         "metadata":{},
         "file_location":null,
-        "module":"AutomaticSleepScoringModules.Yasa",
+        "module":"AutomaticSleepScoringModules.YasaSleepStaging",
         "module_label": "Score Sleep Stages YASA",
         "module_category":"Signal Processing",
         "module_author":"",
