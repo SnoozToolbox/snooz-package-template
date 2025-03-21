@@ -9,7 +9,7 @@ See the file LICENCE for full license details.
 
 from qtpy import QtWidgets
 
-from AutomaticSleepScoringTools.AutomaticSleepScoring.AlgoIntroStep.Ui_AlgoIntroStep import Ui_AlgoIntroStep
+from AutomaticSleepScoringTools.ScoreSleepStagesYASA.AlgoIntroStep.Ui_AlgoIntroStep import Ui_AlgoIntroStep
 from commons.BaseStepView import BaseStepView
 
 class AlgoIntroStep( BaseStepView, Ui_AlgoIntroStep, QtWidgets.QWidget):

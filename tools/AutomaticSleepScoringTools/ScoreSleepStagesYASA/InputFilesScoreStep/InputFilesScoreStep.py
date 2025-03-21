@@ -8,7 +8,7 @@ from qtpy import QtWidgets, QtCore
 from qtpy.QtCore import QTimer
 
 from CEAMSTools.PowerSpectralAnalysis.InputFilesStep.InputFilesStep import InputFilesStep
-#from AutomaticSleepScoringTools.AutomaticSleepScoring.InputFilesScoreStep.Ui_InputFilesScoreStep import Ui_InputFilesScoreStep
+#from AutomaticSleepScoringTools.ScoreSleepStagesYASA.InputFilesScoreStep.Ui_InputFilesScoreStep import Ui_InputFilesScoreStep
 from commons.BaseStepView import BaseStepView
 
 from widgets.WarningDialog import WarningDialog

@@ -9,7 +9,7 @@ from qtpy.QtCore import QTimer
 from PySide2.QtCore import *
 
 #from CEAMSTools.PowerSpectralAnalysis.InputFilesStep.InputFilesStep import InputFilesStep
-from AutomaticSleepScoringTools.AutomaticSleepScoring.ExportResultsStep.Ui_ExportResultsStep import Ui_ExportResultsStep
+from AutomaticSleepScoringTools.ScoreSleepStagesYASA.ExportResultsStep.Ui_ExportResultsStep import Ui_ExportResultsStep
 from commons.BaseStepView import BaseStepView
 
 from widgets.WarningDialogWithButtons import WarningDialogWithButtons

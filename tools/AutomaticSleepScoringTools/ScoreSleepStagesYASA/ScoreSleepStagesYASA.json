@@ -1,7 +1,7 @@
 {
-    "item_name": "AutomaticSleepScoring",
+    "item_name": "ScoreSleepStagesYASA",
     "item_type": "tool",
-    "item_api_version": "1.0.0",
+    "item_api_version": "0.0.0",
     "tool_params": {
         "tool_label": "Automatic Sleep Scoring",
         "tool_category": "1-Preprocessing",
@@ -32,11 +32,11 @@
     "dependencies": [
         {
             "package_name": "AutomaticSleepScoringTools",
-            "package_version": "1.0.0"
+            "package_version": "0.0.0"
         },
         {
             "package_name": "AutomaticSleepScoringModules",
-            "package_version": "1.0.0"
+            "package_version": "0.0.0"
         },
         {
             "package_name": "CEAMSModules",
