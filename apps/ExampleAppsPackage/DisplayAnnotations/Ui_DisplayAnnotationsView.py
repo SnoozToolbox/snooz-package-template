@@ -3,15 +3,22 @@
 ################################################################################
 ## Form generated from reading UI file 'Ui_DisplayAnnotationsView.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.2
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
-
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QGridLayout, QHBoxLayout,
+    QHeaderView, QLabel, QLineEdit, QPushButton,
+    QSizePolicy, QSpacerItem, QTableWidget, QTableWidgetItem,
+    QWidget)
 
 class Ui_DisplayAnnotationsView(object):
     def setupUi(self, DisplayAnnotationsView):
@@ -31,7 +38,6 @@ class Ui_DisplayAnnotationsView(object):
         self.label_8.setObjectName(u"label_8")
         font = QFont()
         font.setBold(True)
-        font.setWeight(75)
         self.label_8.setFont(font)
 
         self.gridLayout_2.addWidget(self.label_8, 0, 0, 1, 2)
@@ -41,7 +47,7 @@ class Ui_DisplayAnnotationsView(object):
 
         self.gridLayout_2.addWidget(self.pushButtonA, 1, 0, 1, 1)
 
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.gridLayout_2.addItem(self.verticalSpacer, 2, 0, 1, 1)
 

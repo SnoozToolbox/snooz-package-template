@@ -2,9 +2,9 @@
 
 Welcome to the snooz-package-template repository. The purpose of this repository is to provide the necessary tools and code for creating new modules and tools in the Snooz software. This README assumes that you have a configured developer environment for Snooz. Make sure your developer environment is set up before proceeding.
 
-Documentation to configure the developer environment : https://snooz-toolbox-documentation.readthedocs.io/dev_guide/installation/installation.html  
+[Documentation to configure the developer environment](https://snooz-toolbox-documentation.readthedocs.io/latest/dev_guide/installation/installation.html)
 
-Documentation to run Snooz from the source code : https://snooz-toolbox-documentation.readthedocs.io/dev_guide/run_snooz.html
+[Documentation to run Snooz from the source code](https://snooz-toolbox-documentation.readthedocs.io/latest/dev_guide/run_snooz.html)
 
 ## Table of Contents
 - [Installation](#installation)
@@ -51,10 +51,10 @@ In Snooz, modules and tools are organized into packages. This repository comes w
 - In Snooz, select **File->Settings**.
 - In the **Packages** tab, click on **Add from folder**.
 - Navigate to the folder of this repository and select **./modules/ExampleModulesPackage**.
-- Repeat the steps to also include the folder **./tools/ExampleToolsPackage**.
+- Repeat the steps to also include the folders **./tools/ExampleToolsPackage** and **./apps/ExampleAppsPackage**.
 
 
-As their name suggests, ExampleModulesPackage contains a list of modules and ExampleToolsPackage contains tools that use those modules.
+As their name suggests, ExampleModulesPackage contains a list of modules, ExampleToolsPackage contains tools that use those modules, and ExampleAppsPackage contains a list of apps.
 
 Once this is done, you should find a new tool under the **Examples** menu in Snooz called **Signal Generator**.
 
@@ -62,7 +62,7 @@ Once this is done, you should find a new tool under the **Examples** menu in Sno
 ## Tools
 ### Try out the Signal Generator tool.
 
-To explore the current examples with the official documentation go to : https://snooz-toolbox-documentation.readthedocs.io/dev_guide/explore_ex.html
+To explore the current examples with the official documentation, see [this link](https://snooz-toolbox-documentation.readthedocs.io/latest/dev_guide/explore_ex.html).
 
 Open the Signal Generator tool. This is a demo tool used to create a signal and export a preview in a PNG file. The user can configure two different signals that can be added together to create the resulting signal.
 - In Snooz, select **Examples->Signal Generator**.
@@ -92,6 +92,7 @@ Let's explore how to create a process by using the same modules as the Signal Ge
 > If you don't see the Examples category in the Module Library, click on the **Options** button and check the packages ExampleModulesPackage 0.0.0 and ExampleToolsPackage 0.0.0.
 
 - Drag the modules from the **Examples** category to reproduce the same process as the Signal Generator tool shown above.
+- Double-click directly on the modules to edit the parameters, in the **Settings** tab so that they match the ones shown above. (The following section provides more details on this approach)
 - Connect the outputs with the inputs by clicking on the circle and dragging the link to the input.
 
 Your new process is now ready to be executed. Save it and run it.
@@ -105,7 +106,7 @@ To configure an instanciated module, double-click on the module itself. This wil
 
 > Note that the settings page you see when double-clicking on the SignalGenerator module is the exact same interface as the second and third steps of the **Signal Generator** step-by-step tool. In fact, it is the exact same code. You can reuse any **Settings** page as a step for a tool. This saves a lot of development time as you only need to do it once, and you can then use the interface in any step-by-step tool that uses that module. We'll go into more detail on how to do that in a later section.
 
-Once the process is configured to your liking, save and run it to see the results. You will find that as you create new modules, you will be creating a lot of different processes to test your modules. It's not necessary to create a step-by-step interface for these processes, just save the **JSON** file of the process, and you can reuse it whenever you need.
+Once the process is configured to your liking, save and run it to see the results. You will find that as you create new modules, you will be creating a lot of different processes to test your modules. It's not necessary to create a step-by-step interface for these processes, just save the **JSON** file of the process, and you can reuse it whenever you need to.
 
 <a id="modules"></a>
 ## Modules
@@ -116,7 +117,7 @@ Modules are at the core of Snooz. All computations are done within a module's **
 All you need to debug a module is to add a breakpoint in its compute function and run a process with your module in it. When the process reaches your module, it will call the compute function, and you'll be able to step through it using the Visual Studio Debugger tool.
 
 1. Open your Visual Studio workspace.
-2. Navigate to the compute function of the GenerateSignal module: snooz-package-template/modules/ExampleModulesPackage/GenerateSignal/GenerateSignal.py
+2. Navigate to the compute function of the SignalGenerator module: snooz-package-template/modules/ExampleModulesPackage/SignalGenerator/SignalGenerator.py
 3. Add a breakpoint to the compute function by clicking in the left margin of the file.
 4. **Press F5** to launch Snooz.
 5. Open the **Signal Generator** tool.
@@ -127,29 +128,32 @@ All you need to debug a module is to add a breakpoint in its compute function an
 
 ### Creating a new module
 
-In this section, we will be creating a new module to subtract a signal from another and output the resulting signal. The procedure will be the same for any other modules you may want to create. Let's first define the module's attributes:
-
-	Name: SubtractSignals
-	Label: Subtract Signals
-	Category (for the menu): Examples
-	Input1: main_signal
-	Input2: signal_to_substract
-	Output1: signal
+In this section, we will be creating a new module to subtract a signal from another and output the resulting signal. The procedure will be the same for any other modules you may want to create.
 
 #### Open the main python utility
 We use a command line tool to help create new modules and tools. This makes the process much easier than writing all the necessary files from scratch.
 
 1. Open the terminal in Visual Studio Code: **Terminal->New terminal**.
-2. Select **snooz_template_package**.
+2. Select **snooz_package_template**.
 
 This should open a new terminal with the correct python virtual environment activated (snooz_310_env).
 
 1. Type `python main_utils.py`
 2. Select `2- Create a module`
 3. Type `ExampleModulesPackage` (This will create a subfolder under that package folder).
-4. Fill the rest with the information from above. If you make any mistakes, just repeat the steps and it will ask to overwrite the previous one.
+4. Fill the rest with the information below. If you make any mistakes, just repeat the steps and it will ask to overwrite the previous one.
+```
+Name: SubtractSignals
+Label: Subtract Signals
+Category (for the menu): Examples
+Input1: main_signal
+Input2: signal_to_substract
+Output1: signal
+```
 
-As the message in the console mentions, there's a final step before you can use the module in a process. You need to generate the python files associated with the two .ui files of the module. In Visual Studio Code:
+A final step when normally creating modules is to compile `.ui` files into python files using a specific compiler. Depending on if your system could find that compiler, you should receive two different types of messages, the first one being `Done!`. This means that you should be all set!
+
+The other case is if your system was not able to find the compiler, a longer message should appear saying that you may need to do it manually. Here are the steps to generate the python files associated with the two `.ui` files of the modules. In Visual Studio Code:
 
 1. Find the new subfolder of your module.
 2. Right-click on file **Ui_SubstractSignalsResultsView.ui**
@@ -171,7 +175,7 @@ Now if you open the subfolder **modules/ExampleModulesPackage** you'll see a new
       <td>The __init__.py file in a Python package serves to indicate that the directory should be treated as a Python package.</td>
     </tr>
     <tr>
-      <td>description.json</td>
+      <td>SubstractSignals.json</td>
       <td>The attributes of the module in JSON format. This is used by Snooz to understand how to use this module in a process. If at some point you need to change your inputs or outputs, you'll need to modify this file.</td>
     </tr>
     <tr>
@@ -257,7 +261,7 @@ Add ``import numpy as np`` at the beginning of the SubstractSignals.py file sinc
 Follow these steps to test your new module:
 
 1. Press **F5** to launch Snooz.
-2. Create a new process: **File->New**
+2. Create a new process: **Dev Tools->New process**
 3. Add two **SignalGenerator** module.
 4. Add your new **SubstractSignals** module.
 5. Add a **PrintSignal** module.
@@ -301,9 +305,9 @@ Congratulations, you are now set up to start making new modules and tools for Sn
 
 There is still a lot to learn about the Snooz software and how to develop modules and tools for it. 
 
-Here the documentation for the Hows Tos : https://snooz-toolbox-documentation.readthedocs.io/dev_guide/howtos/howtos.html
+Here the documentation for the Hows Tos : https://snooz-toolbox-documentation.readthedocs.io/latest/dev_guide/howtos/howtos.html
 
-To have more information about the Snooz architecture, see : https://snooz-toolbox-documentation.readthedocs.io/dev_guide/information/information.html
+To have more information about the Snooz architecture, see : https://snooz-toolbox-documentation.readthedocs.io/latest/dev_guide/information/information.html
 
-For the Versioning Guidelines, see : https://snooz-toolbox-documentation.readthedocs.io/dev_guide/information/information.html#how-module-tool-and-package-versioning-works
+For the Versioning Guidelines, see : https://snooz-toolbox-documentation.readthedocs.io/latest/dev_guide/information/information.html#how-module-tool-and-package-versioning-works
 

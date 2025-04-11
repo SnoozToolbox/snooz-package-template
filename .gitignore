@@ -6,6 +6,7 @@
 # Node artifact files
 node_modules/
 dist/
+scripts/
 
 #Python cache
 __pycache__/
@@ -55,4 +56,4 @@ docs/build/
 
 release/
 
-.vscode/settings.json
+.vscode/settings.json 

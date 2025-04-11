@@ -3,7 +3,7 @@
 See the file LICENCE for full license details.
 """
 DEBUG = False
-from PySide2.QtWidgets import QMessageBox
+from PySide6.QtWidgets import QMessageBox
 from qtpy import QtWidgets
 
 from ExampleAppsPackage.DisplayAnnotations.Ui_DisplayAnnotationsView import Ui_DisplayAnnotationsView
