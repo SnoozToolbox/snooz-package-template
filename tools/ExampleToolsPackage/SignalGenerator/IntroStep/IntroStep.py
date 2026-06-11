@@ -7,8 +7,6 @@ See the file LICENCE for full license details.
 """
 import os
 from qtpy import QtWidgets
-from qtpy.QtCore import QUrl
-from qtpy.QtWebEngineWidgets import QWebEngineView
 
 from ExampleToolsPackage.SignalGenerator.IntroStep.Ui_IntroStep import Ui_IntroStep
 from commons.BaseStepView import BaseStepView
@@ -23,11 +21,6 @@ class IntroStep(BaseStepView, Ui_IntroStep, QtWidgets.QWidget):
 
         # init UI
         self.setupUi(self)
-
-        self.web_engine_view = QWebEngineView()
-        self.web_engine_view.setObjectName(u"web_engine_view")
-        self.verticalLayout.addWidget(self.web_engine_view)
-
         # If necessary, init the context. The context is a memory space shared by 
         # all steps of a tool. It is used to share and notice other steps whenever
         # the value in it changes. It's very useful when the parameter within a step

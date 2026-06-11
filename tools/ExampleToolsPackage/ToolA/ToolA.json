@@ -3,9 +3,10 @@
     "item_type": "tool",
     "item_api_version": "3.0.0",
     "item_url": "",
-    "item_author": "David L\u00e9vesque",
+    "item_author": "CEAMS/CARSM",
     "item_description": "",
     "tool_params": {
+        "tool_version": "0.1.0",
         "tool_label": "Tool A",
         "tool_category": "Examples",
         "asset_directory": "",
@@ -34,11 +35,11 @@
     "dependencies": [
         {
             "package_name": "ExampleModulesPackage",
-            "package_version": "0.0.0"
+            "package_version": "0.1.0"
         },
         {
             "package_name": "ExampleToolsPackage",
-            "package_version": "0.0.0",
+            "package_version": "0.1.0",
             "deleteable": false
         }
     ],
