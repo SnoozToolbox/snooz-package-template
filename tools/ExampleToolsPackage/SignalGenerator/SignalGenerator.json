@@ -2,7 +2,7 @@
     "item_name": "SignalGenerator",
     "item_type": "tool",
     "item_api_version": "3.0.0",
-    "item_url": "",
+    "item_url": "https://snooz-toolbox-documentation.readthedocs.io/latest/dev_guide/explore_ex.html#explore-the-signal-generator-tool",
     "item_author": "CEAMS/CARSM",
     "item_description": "Example tool to generate a signal made of two signals and print the result in a PNG file.",
     "tool_params": {
