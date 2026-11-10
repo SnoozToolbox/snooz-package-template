@@ -23,7 +23,6 @@ class Ui_SecondStep(object):
     def setupUi(self, SecondStep):
         if not SecondStep.objectName():
             SecondStep.setObjectName(u"SecondStep")
-        SecondStep.setStyleSheet(u"font: 10pt \"Roboto-Regular\";")
         SecondStep.resize(730, 590)
         self.verticalLayout = QVBoxLayout(SecondStep)
         self.verticalLayout.setSpacing(25)
